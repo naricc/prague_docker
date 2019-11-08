@@ -67,6 +67,7 @@ WORKDIR /src/aspnetcore/src/Servers/Kestrel/perf/PlatformBenchmarks/bin/Release/
 
 WORKDIR /src
 RUN git clone https://github.com/dotnet/performance.git
+RUN git clone https://github.com/brendangregg/FlameGraph
 
 # WORKDIR /src/performance/src/benchmarks/micro
 # RUN /src/mono/.dotnet/dotnet build -f netcoreapp5.0 -c release MicroBenchmarks.sln
