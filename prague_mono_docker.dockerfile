@@ -68,8 +68,8 @@ WORKDIR /src/aspnetcore/src/Servers/Kestrel/perf/PlatformBenchmarks/bin/Release/
 WORKDIR /src
 RUN git clone https://github.com/dotnet/performance.git
 
-WORKDIR /src/performance/src/benchmarks/micro
-RUN /src/mono/.dotnet/dotnet build -f netcoreapp5.0 -c release MicroBenchmarks.sln
+# WORKDIR /src/performance/src/benchmarks/micro
+# RUN /src/mono/.dotnet/dotnet build -f netcoreapp5.0 -c release MicroBenchmarks.sln
 
 ENV ASPNETCORE_URLS http://+:8080
 ENV MONO_ENV_OPTIONS --llvm --server --gc=sgen --gc-params=mode=throughput
