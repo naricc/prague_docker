@@ -18,7 +18,9 @@ RUN apt-get update && \
         gettext \
         python \
         libunwind8 \
-        icu-devtools
+        icu-devtools \
+	linux-perf \
+	wrk
 
 # Download and install the .NET Core SDK.
 WORKDIR /dotnet
