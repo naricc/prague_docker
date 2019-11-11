@@ -54,8 +54,15 @@ RUN ./autogen.sh && \
     cd netcore && \
     make runtime && \
     make bcl && \
-    make patch-local-dotnet
-   
+    make patch-local-dotnet  
+ 
+
+WORKDIR /src
+RUN git clone https://github.com/dotnet/performance.git
+
+WORKDIR /src/performance/src/benchmarks/micro
+RUN /src/mono/.dotnet/dotnet build -f netcoreapp5.0 -c release MicroBenchmarks.sln
+`
 
 WORKDIR /src
 
