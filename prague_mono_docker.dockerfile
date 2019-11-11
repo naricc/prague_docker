@@ -20,6 +20,7 @@ RUN apt-get update && \
         libunwind8 \
         icu-devtools \
 	linux-perf \
+	screen \
 	wrk
 
 # Download and install the .NET Core SDK.
@@ -64,7 +65,6 @@ RUN git clone https://github.com/dotnet/performance.git
 
 WORKDIR /src/performance/src/benchmarks/micro
 RUN /src/mono/.dotnet/dotnet build -f netcoreapp5.0 -c release MicroBenchmarks.sln
-`
 
 WORKDIR /src
 
