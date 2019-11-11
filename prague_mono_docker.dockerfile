@@ -71,4 +71,7 @@ WORKDIR /src
 # Run the test.
 ENV ASPNETCORE_URLS http://+:8080
 ENV MONO_ENV_OPTIONS --llvm --server --gc=sgen --gc-params=mode=throughput
+ENV WRK_COMMAND wrk --latency -t 32 -d 15 -c 256 --header "Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7" --header "Connection: keep-alive" http://192.168.1.1:8080/plaintext
+ENV MONO_DOTNET /src/mono/.dotnet/dotnet
+
 ENTRYPOINT ["/bin/bash"]
