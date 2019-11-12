@@ -47,6 +47,7 @@ WORKDIR /src/aspnetcore/src/Servers/Kestrel/perf/PlatformBenchmarks
 RUN dotnet build -c Release -f netcoreapp5.0 -r linux-x64
 
 # Build mono from source with llvm support; patch system wide .Net
+WORKDIR /src
 RUN git clone --recurse-submodules -j8 https://github.com/mono/mono.git
 
 WORKDIR /src/mono
